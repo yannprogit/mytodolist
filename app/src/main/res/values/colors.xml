@@ -5,4 +5,5 @@
     <color name="primaryColor">#18F2B2</color>
     <color name="backgroundColor">#1C3041</color>
     <color name="secondColor">#89043D</color>
+    <color name="lineColor">#D0D0D0</color>
 </resources>
