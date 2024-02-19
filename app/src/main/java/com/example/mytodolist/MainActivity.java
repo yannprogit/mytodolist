@@ -4,7 +4,8 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 import android.view.View;
-import com.example.mytodolist.Controller.loginController;
+import com.example.mytodolist.Controller.LoginController;
+import com.example.mytodolist.Controller.SignUpController;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -14,8 +15,11 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
     }
 
-    public void onClickSignUp(View view) {
-        loginController.goToSignUp(this);
+    public void onClickCreateAccount(View view) {
+        LoginController.goToSignUp(this);
+    }
+    public void onClickConnexion(View view) {
+        SignUpController.goToLogin(this);
     }
 }
 

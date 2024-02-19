@@ -1,6 +1,13 @@
 <resources>
     <string name="app_name">My to do list</string>
     <string name="connexion">Connexion</string>
-    <string name="sign_up">Sign up</string>
+    <string name="sign_up">Create an account</string>
+    <string name="welcome">Welcome</string>
+    <string name="sentenceLink">on our application</string>
     <string name="create_account_prompt">Don\'t have an account ? Create an account here</string>
+    <string name="success_created_account">Successfully created account !</string>
+    <string name="exit">Exit</string>
+    <string name="missing_fields">Please complete all fields</string>
+    <string name="wrong_mail_format">The mail must be in format example@example.com</string>
+    <string name="user_already_exists">User already exists</string>
 </resources>
