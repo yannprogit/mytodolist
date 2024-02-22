@@ -1,25 +1,19 @@
 package com.example.mytodolist.Controller;
 
-import static android.provider.Settings.System.getString;
-
 import android.content.Context;
 import android.content.Intent;
 import android.text.TextUtils;
-import android.widget.Toast;
-
-import androidx.annotation.NonNull;
 
 import com.example.mytodolist.Model.RemoteDB;
 import com.example.mytodolist.Model.User;
 import com.example.mytodolist.R;
 import com.example.mytodolist.View.LoginActivity;
-import com.example.mytodolist.View.SignUpActivity;
-import com.google.android.gms.tasks.Continuation;
 import com.google.android.gms.tasks.Task;
 import com.google.android.gms.tasks.Tasks;
+import com.google.firebase.auth.AuthResult;
 
 public class SignUpController {
-    public static Task<Void> createUser(String pseudo, String mail, String password, Context context) {
+    public static Task<AuthResult> createUser(String pseudo, String mail, String password, Context context) {
         String mailPattern = "[a-zA-Z0-9._-]+@[a-z]+\\.+[a-z]+";
 
         if (TextUtils.isEmpty(pseudo) || TextUtils.isEmpty(mail) || TextUtils.isEmpty(password)) {
@@ -30,6 +24,17 @@ public class SignUpController {
         }
         else {
             User user = new User(pseudo, mail, password);
+            return RemoteDB.saveUser(user);
+            /*RemoteDB.userExists(user.getMail(), user.getPseudo()).addOnCompleteListener(new OnCompleteListener<Void>() {
+                @Override
+                public void onComplete(@NonNull Task<Void> task) {
+                    if (task.isSuccessful()) {
+                        return RemoteDB.saveUser(user);
+                    } else {
+                        return Tasks.forException(task.getException());
+                    }
+                }
+            });
             return RemoteDB.saveUser(user);
             /*return RemoteDB.userExists(mail, pseudo).continueWithTask(new Continuation<Boolean, Task<Void>>() {
                 @Override
