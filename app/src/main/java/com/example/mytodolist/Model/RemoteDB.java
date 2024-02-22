@@ -1,9 +1,15 @@
 package com.example.mytodolist.Model;
 
+import androidx.annotation.NonNull;
+
+import com.example.mytodolist.R;
+import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.android.gms.tasks.TaskCompletionSource;
+import com.google.android.gms.tasks.Tasks;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -40,10 +46,17 @@ public class RemoteDB {
     }
 
     static public Task<AuthResult> saveUser(User newUser) {
-        /*DatabaseReference usersRef = db.getReference("users");
-        DatabaseReference id = usersRef.push();
-        return usersRef.child(id.getKey()).setValue(newUser);*/
-        return mAuth.createUserWithEmailAndPassword(newUser.getMail(), newUser.getPassword());
+        return mAuth.createUserWithEmailAndPassword(newUser.getMail(), newUser.getPassword())
+                .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+            @Override
+            public void onComplete(@NonNull Task<AuthResult> task) {
+                if (task.isSuccessful()) {
+                    DatabaseReference usersRef = db.getReference("pseudos");
+                    FirebaseUser firebaseUser = mAuth.getCurrentUser();
+                    usersRef.child(firebaseUser.getUid()).setValue(newUser.getPseudo());
+                }
+            }
+        });
     }
 
     public static List<User> getUsers() {
