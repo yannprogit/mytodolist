@@ -25,34 +25,6 @@ public class SignUpController {
         else {
             User user = new User(pseudo, mail, password);
             return RemoteDB.saveUser(user);
-            /*RemoteDB.userExists(user.getMail(), user.getPseudo()).addOnCompleteListener(new OnCompleteListener<Void>() {
-                @Override
-                public void onComplete(@NonNull Task<Void> task) {
-                    if (task.isSuccessful()) {
-                        return RemoteDB.saveUser(user);
-                    } else {
-                        return Tasks.forException(task.getException());
-                    }
-                }
-            });
-            return RemoteDB.saveUser(user);
-            /*return RemoteDB.userExists(mail, pseudo).continueWithTask(new Continuation<Boolean, Task<Void>>() {
-                @Override
-                public Task<Void> then(@NonNull Task<Boolean> task) throws Exception {
-                    if (task.isSuccessful()) {
-                        boolean userExists = task.getResult();
-
-                        if (userExists) {
-                            return Tasks.forException(new Exception(context.getString(R.string.user_already_exists)));
-                        } else {
-                            User user = new User(pseudo, mail, password);
-                            return RemoteDB.saveUser(user);
-                        }
-                    } else {
-                        return Tasks.forException(task.getException());
-                    }
-                }
-            });*/
         }
     }
 

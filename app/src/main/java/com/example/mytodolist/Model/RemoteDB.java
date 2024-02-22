@@ -22,6 +22,7 @@ import java.util.List;
 public class RemoteDB {
     private static List<User> users = new ArrayList<User>();
     private static FirebaseDatabase db = FirebaseDatabase.getInstance();
+
     private static FirebaseAuth mAuth = FirebaseAuth.getInstance();
 
     public static Task<Boolean> userExists(String mail, String pseudo) {
@@ -59,11 +60,19 @@ public class RemoteDB {
         });
     }
 
+    static public Task<AuthResult> loginUser(User user) {
+        return mAuth.signInWithEmailAndPassword(user.getMail(), user.getPassword());
+    }
+
     public static List<User> getUsers() {
         return users;
     }
 
     public static FirebaseDatabase getDb() {
         return db;
+    }
+
+    public static FirebaseAuth getmAuth() {
+        return mAuth;
     }
 }

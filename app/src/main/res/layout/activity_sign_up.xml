@@ -23,30 +23,30 @@
         app:layout_constraintVertical_bias="0.063" />
 
     <EditText
-        android:id="@+id/pseudoInput"
+        android:id="@+id/pseudoSignUp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ems="10"
         android:inputType="text"
-        app:layout_constraintBottom_toTopOf="@+id/mailInput"
+        app:layout_constraintBottom_toTopOf="@+id/mailSignUp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/titleSignUp" />
 
     <EditText
-        android:id="@+id/mailInput"
+        android:id="@+id/mailSignUp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="76dp"
         android:ems="10"
         android:inputType="textEmailAddress"
-        app:layout_constraintBottom_toTopOf="@+id/passwordInput"
+        app:layout_constraintBottom_toTopOf="@+id/passwordSignUp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent" />
 
     <EditText
-        android:id="@+id/passwordInput"
+        android:id="@+id/passwordSignUp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="292dp"
@@ -66,6 +66,6 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/passwordInput" />
+        app:layout_constraintTop_toBottomOf="@+id/passwordSignUp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
