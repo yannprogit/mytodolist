@@ -4,6 +4,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.text.TextUtils;
 
+import com.example.mytodolist.MainActivity;
 import com.example.mytodolist.Model.RemoteDB;
 import com.example.mytodolist.Model.User;
 import com.example.mytodolist.R;
@@ -38,5 +39,11 @@ public class LoginController {
             User user = new User(mail, password);
             return RemoteDB.loginUser(user);
         }
+    }
+
+    static public void logoutUser(Context context) {
+        RemoteDB.getmAuth().signOut();
+        Intent intent = new Intent(context, MainActivity.class);
+        context.startActivity(intent);
     }
 }
