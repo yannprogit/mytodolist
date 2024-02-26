@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">My to do list</string>
+    <string name="connection">Connexion</string>
+    <string name="connection_title">Content de vous revoir</string>
+    <string name="connection_subtitle">Soyons productif</string>
+    <string name="sign_up">Créer un compte</string>
+    <string name="welcome">Bienvenue</string>
+    <string name="sentence_link">sur notre application</string>
+    <string name="create_account_prompt">Vous n\'avez pas de compte ? Créer un compte ici</string>
+    <string name="success_created_account">Compte créé avec succès !</string>
+    <string name="success_connection">Connexion réussi !</string>
+    <string name="exit">Quitter</string>
+    <string name="missing_fields">Veuillez remplir tous les champs</string>
+    <string name="wrong_mail_format">Le mail doit être dans le format exemple@exemple.com</string>
+    <string name="user_already_exists">L\'utilisateur existe déjà</string>
+</resources>

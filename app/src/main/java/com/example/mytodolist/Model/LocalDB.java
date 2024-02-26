@@ -1,4 +1,5 @@
 package com.example.mytodolist.Model;
 
-public class provisoire {
+public class LocalDB {
+
 }
