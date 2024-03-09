@@ -1,18 +1,9 @@
-package com.example.mytodolist.Model;
+package com.example.mytodolist.Model.Class;
 
 public class User {
-    private String id;
     private String pseudo;
     private String mail;
     private String password;
-
-    public User(String id, String pseudo, String mail, String password) {
-        super();
-        this.id = id;
-        this.pseudo = pseudo;
-        this.password = password;
-        this.mail = mail;
-    }
 
     public User(String pseudo, String mail, String password) {
         super();
@@ -25,10 +16,6 @@ public class User {
         super();
         this.password = password;
         this.mail = mail;
-    }
-
-    public String getId() {
-        return id;
     }
 
     public String getPseudo() {

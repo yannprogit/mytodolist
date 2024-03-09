@@ -5,9 +5,10 @@ import android.content.Intent;
 import android.text.TextUtils;
 
 import com.example.mytodolist.Model.RemoteDB;
-import com.example.mytodolist.Model.User;
+import com.example.mytodolist.Model.Class.User;
 import com.example.mytodolist.R;
 import com.example.mytodolist.View.LoginActivity;
+import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.android.gms.tasks.Tasks;
 import com.google.firebase.auth.AuthResult;

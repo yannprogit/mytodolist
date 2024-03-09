@@ -13,4 +13,6 @@
     <string name="missing_fields">Veuillez remplir tous les champs</string>
     <string name="wrong_mail_format">Le mail doit être dans le format exemple@exemple.com</string>
     <string name="user_already_exists">L\'utilisateur existe déjà</string>
+    <string name="logout">Déconnexion</string>
+    <string name="titleLocalTodoActivity">Mes todolists locales</string>
 </resources>

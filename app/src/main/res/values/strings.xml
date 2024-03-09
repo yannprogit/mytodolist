@@ -13,4 +13,6 @@
     <string name="missing_fields">Please complete all fields</string>
     <string name="wrong_mail_format">The mail must be in format example@example.com</string>
     <string name="user_already_exists">User already exists</string>
+    <string name="logout">Logout</string>
+    <string name="titleLocalTodoActivity">My local todolists</string>
 </resources>
