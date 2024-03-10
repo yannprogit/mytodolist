@@ -3,7 +3,6 @@ package com.example.mytodolist.Controller.Adapter;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -21,7 +20,6 @@ import androidx.annotation.Nullable;
 import com.example.mytodolist.Model.Class.Task;
 import com.example.mytodolist.Model.LocalDB;
 import com.example.mytodolist.R;
-import com.example.mytodolist.View.LocalTodoDetailActivity;
 import com.example.mytodolist.View.UpdLocalTaskActivity;
 
 import java.util.ArrayList;
@@ -38,7 +36,7 @@ public class LocalTaskAdapter extends ArrayAdapter<Task> {
     @Override
     public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
         if (convertView == null) {
-            convertView = LayoutInflater.from(getContext()).inflate(R.layout.local_task, parent, false);
+            convertView = LayoutInflater.from(getContext()).inflate(R.layout.local_task_item, parent, false);
         }
 
         Task currentItem = getItem(position);

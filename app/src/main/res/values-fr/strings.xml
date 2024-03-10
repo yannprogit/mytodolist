@@ -14,7 +14,7 @@
     <string name="wrong_mail_format">Le mail doit être dans le format exemple@exemple.com</string>
     <string name="user_already_exists">L\'utilisateur existe déjà</string>
     <string name="logout">Déconnexion</string>
-    <string name="titleLocalTodoActivity">Mes todolists locales</string>
+    <string name="titleLocalTodo">Mes todolists locales</string>
     <string name="modify">Modifier</string>
     <string name="delete">Supprimer</string>
     <string name="share">Partager</string>

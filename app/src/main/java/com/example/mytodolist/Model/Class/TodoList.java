@@ -26,6 +26,12 @@ public class TodoList implements Serializable {
 
     private ArrayList<Task> tasks;
 
+    public ArrayList<String> getShared() {
+        return shared;
+    }
+
+    private ArrayList<String> shared;
+
     public TodoList() {
         super();
     }
@@ -36,10 +42,14 @@ public class TodoList implements Serializable {
         this.userId = userId;
         this.id = id;
         this.tasks = new ArrayList<>();
+        this.shared = new ArrayList<>();
     }
 
     public void addTask(Task newTask) {
         tasks.add(newTask);
+    }
+    public void addShare(String id) {
+        shared.add(id);
     }
 
     public ArrayList<Task> getTasks() {

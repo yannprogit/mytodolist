@@ -27,7 +27,7 @@ public class LocalTodoAdapter extends ArrayAdapter<TodoList> {
     @Override
     public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
         if (convertView == null) {
-            convertView = LayoutInflater.from(getContext()).inflate(R.layout.local_todolist, parent, false);
+            convertView = LayoutInflater.from(getContext()).inflate(R.layout.local_todolist_item, parent, false);
         }
 
         TodoList currentItem = getItem(position);
