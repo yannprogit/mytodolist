@@ -28,5 +28,9 @@
     <string name="yes_button">Yes</string>
     <string name="no_button">No</string>
     <string name="warning">Warning !</string>
+    <string name="mail">Mail</string>
+    <string name="password">Password</string>
+    <string name="pseudo">Pseudo</string>
+    <string name="create">Create</string>
 
 </resources>

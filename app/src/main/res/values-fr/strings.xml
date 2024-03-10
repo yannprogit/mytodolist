@@ -28,4 +28,8 @@
     <string name="yes_button">Oui</string>
     <string name="no_button">Non</string>
     <string name="warning">Attention !</string>
+    <string name="mail">Mail</string>
+    <string name="password">Mot de passe</string>
+    <string name="pseudo">Pseudo</string>
+    <string name="create">Créer</string>
 </resources>
