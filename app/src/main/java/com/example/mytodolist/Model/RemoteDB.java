@@ -85,6 +85,11 @@ public class RemoteDB {
         query.addValueEventListener(valueEventListener);
     }
 
+    public static void getUsers(ValueEventListener valueEventListener) {
+        DatabaseReference usersRef = db.getReference("users");
+        usersRef.addValueEventListener(valueEventListener);
+    }
+
     public static String generateId(String ref) {
         DatabaseReference refId = db.getReference(ref);
         return refId.push().getKey();

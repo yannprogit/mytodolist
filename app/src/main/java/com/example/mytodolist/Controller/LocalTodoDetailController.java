@@ -8,6 +8,7 @@ import com.example.mytodolist.Model.LocalDB;
 import com.example.mytodolist.Model.RemoteDB;
 import com.example.mytodolist.View.AddLocalTaskActivity;
 import com.example.mytodolist.View.AddLocalTodoActivity;
+import com.example.mytodolist.View.ShareActivity;
 import com.example.mytodolist.View.UpdLocalTodoActivity;
 
 public class LocalTodoDetailController {
@@ -32,11 +33,10 @@ public class LocalTodoDetailController {
 
     public static void goToShare(Context context, TodoList todolist) {
         LocalDB localdb = new LocalDB(context);
-        Intent intent = new Intent(context, UpdLocalTodoActivity.class);
+        Intent intent = new Intent(context, ShareActivity.class);
 
         TodoList selectedTodo = localdb.getTodoList(todolist.getId());
         intent.putExtra("selectedTodo", selectedTodo);
-        intent.putExtra("source", "fromLocal");
         context.startActivity(intent);
     }
 

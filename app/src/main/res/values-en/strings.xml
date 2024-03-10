@@ -21,4 +21,6 @@
     <string name="titleSharedTodo">Shared todolists</string>
     <string name="titleSharedTodoWithMe">Shared with me</string>
     <string name="user_doesnt_exist">This user doesn\'t exist</string>
+    <string name="todolist_shared">Todolist shared !</string>
+    <string name="mail_is_your">It is your mail !</string>
 </resources>

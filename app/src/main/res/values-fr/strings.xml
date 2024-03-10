@@ -21,4 +21,6 @@
     <string name="titleSharedTodo">Todolists partagés</string>
     <string name="titleSharedTodoWithMe">Partagés avec moi</string>
     <string name="user_doesnt_exist">Cet utilisateur n\'existe pas</string>
+    <string name="todolist_shared">Todolist partagé !</string>
+    <string name="mail_is_your">Ceci est votre mail !</string>
 </resources>
