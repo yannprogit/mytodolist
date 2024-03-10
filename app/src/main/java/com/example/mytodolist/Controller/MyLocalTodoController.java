@@ -11,6 +11,7 @@ import com.example.mytodolist.Model.LocalDB;
 import com.example.mytodolist.Model.RemoteDB;
 import com.example.mytodolist.View.AddLocalTodoActivity;
 import com.example.mytodolist.View.MyLocalTodoActivity;
+import com.example.mytodolist.View.SharedTodoActivity;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.ValueEventListener;
@@ -27,7 +28,9 @@ public class MyLocalTodoController {
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 for (DataSnapshot todoListSnapshot : dataSnapshot.getChildren()) {
                     TodoList todoList = todoListSnapshot.getValue(TodoList.class);
-                    localdb.insertTodoList(todoList);
+                    if (todoList != null && todoList.getShared() == null) {
+                        localdb.insertTodoList(todoList);
+                    }
                 }
             }
 
@@ -46,7 +49,7 @@ public class MyLocalTodoController {
     }
 
     public static void goToSharedTodo(Context context) {
-        Intent intent = new Intent(context, AddLocalTodoActivity.class);
+        Intent intent = new Intent(context, SharedTodoActivity.class);
         context.startActivity(intent);
     }
 }

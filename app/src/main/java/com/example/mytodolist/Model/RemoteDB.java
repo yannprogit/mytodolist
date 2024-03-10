@@ -3,12 +3,17 @@ package com.example.mytodolist.Model;
 import android.util.Log;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 
 import com.example.mytodolist.Model.Class.TodoList;
 import com.example.mytodolist.Model.Class.User;
+import com.example.mytodolist.R;
 import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.android.gms.tasks.TaskCompletionSource;
+import com.google.android.gms.tasks.Tasks;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -29,22 +34,26 @@ public class RemoteDB {
 
     private static FirebaseAuth mAuth = FirebaseAuth.getInstance();
 
-    static public Task<AuthResult> saveUser(User newUser) {
-        return mAuth.createUserWithEmailAndPassword(newUser.getMail(), newUser.getPassword())
+    static public Task<AuthResult> saveUser(String pseudo, String mail, String password) {
+        return mAuth.createUserWithEmailAndPassword(mail, password)
                 .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
                 if (task.isSuccessful()) {
-                    DatabaseReference usersRef = db.getReference("pseudos");
+                    DatabaseReference usersRef = db.getReference("users");
                     FirebaseUser firebaseUser = mAuth.getCurrentUser();
-                    usersRef.child(firebaseUser.getUid()).setValue(newUser.getPseudo());
+                    //usersRef.child(firebaseUser.getUid()).setValue(newUser.getPseudo());
+                    User user = new User(firebaseUser.getUid(), pseudo, mail);
+                    Map<String, Object> userMap = new HashMap<>();
+                    userMap.put(user.getUid(), user);
+                    usersRef.updateChildren(userMap);
                 }
             }
         });
     }
 
-    static public Task<AuthResult> loginUser(User user) {
-        return mAuth.signInWithEmailAndPassword(user.getMail(), user.getPassword());
+    static public Task<AuthResult> loginUser(String mail, String password) {
+        return mAuth.signInWithEmailAndPassword(mail, password);
     }
 
     public static void saveTodoLists(ArrayList<TodoList> todoLists) {

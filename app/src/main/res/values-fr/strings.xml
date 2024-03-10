@@ -20,4 +20,5 @@
     <string name="share">Partager</string>
     <string name="titleSharedTodo">Todolists partagés</string>
     <string name="titleSharedTodoWithMe">Partagés avec moi</string>
+    <string name="user_doesnt_exist">Cet utilisateur n\'existe pas</string>
 </resources>

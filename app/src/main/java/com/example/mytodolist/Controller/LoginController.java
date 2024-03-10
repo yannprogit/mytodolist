@@ -38,8 +38,7 @@ public class LoginController {
             return Tasks.forException(new Exception(context.getString(R.string.wrong_mail_format)));
         }
         else {
-            User user = new User(mail, password);
-            return RemoteDB.loginUser(user);
+            return RemoteDB.loginUser(mail, password);
         }
     }
 

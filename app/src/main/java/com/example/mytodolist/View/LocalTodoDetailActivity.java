@@ -2,6 +2,7 @@ package com.example.mytodolist.View;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuInflater;
@@ -64,7 +65,7 @@ public class LocalTodoDetailActivity extends AppCompatActivity {
         todoOptionsBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                showPopupMenu(todoOptionsBtn);
+                showPopupMenu(todoOptionsBtn, LocalTodoDetailActivity.this, selectedTodo);
             }
         });
     }
@@ -86,7 +87,7 @@ public class LocalTodoDetailActivity extends AppCompatActivity {
         LocalTodoDetailController.saveTodoList(this, importSelectedTodo);
     }
 
-    private void showPopupMenu(View view) {
+    private void showPopupMenu(View view, Context context, TodoList todolist) {
         PopupMenu popupMenu = new PopupMenu(this, view);
         MenuInflater inflater = popupMenu.getMenuInflater();
         inflater.inflate(R.menu.local_todo_options, popupMenu.getMenu());
@@ -96,6 +97,7 @@ public class LocalTodoDetailActivity extends AppCompatActivity {
             public boolean onMenuItemClick(MenuItem item) {
                 int id = item.getItemId();
                 if (id == R.id.shareLocalTodoOption) {
+                    LocalTodoDetailController.goToShare(context, todolist);
                     return true;
                 } else if (id == R.id.deleteLocalTodoOption) {
                     return true;

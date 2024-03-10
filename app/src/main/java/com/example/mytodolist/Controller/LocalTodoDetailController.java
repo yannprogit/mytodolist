@@ -30,6 +30,16 @@ public class LocalTodoDetailController {
         context.startActivity(intent);
     }
 
+    public static void goToShare(Context context, TodoList todolist) {
+        LocalDB localdb = new LocalDB(context);
+        Intent intent = new Intent(context, UpdLocalTodoActivity.class);
+
+        TodoList selectedTodo = localdb.getTodoList(todolist.getId());
+        intent.putExtra("selectedTodo", selectedTodo);
+        intent.putExtra("source", "fromLocal");
+        context.startActivity(intent);
+    }
+
     public static TodoList getTodoList(Context context, TodoList todolist) {
         LocalDB localdb = new LocalDB(context);
         TodoList selectedTodo = localdb.getTodoList(todolist.getId());

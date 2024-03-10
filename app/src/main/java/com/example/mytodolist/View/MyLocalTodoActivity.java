@@ -49,6 +49,7 @@ public class MyLocalTodoActivity extends AppCompatActivity {
     }
 
     public void clickOnGoToSharedTodo(View view) {
+        finish();
         MyLocalTodoController.goToSharedTodo(this);
     }
 
