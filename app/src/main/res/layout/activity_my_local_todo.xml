@@ -30,7 +30,9 @@
                 android:layout_centerVertical="true"
                 android:textColor="@color/backgroundColor"
                 android:layout_height="wrap_content"
-                android:text="@string/titleLocalTodo" />
+                android:text="@string/titleLocalTodo"
+                android:paddingLeft="25dp"
+                android:paddingTop="15dp"/>
         </RelativeLayout>
 
         <LinearLayout

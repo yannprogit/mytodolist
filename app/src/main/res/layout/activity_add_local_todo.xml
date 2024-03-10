@@ -40,14 +40,16 @@
                 android:id="@+id/chooseTitleLocalTodo"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="TextView" />
+                android:text="TextView"
+                android:textColor="@color/white"/>
 
             <EditText
                 android:id="@+id/localTodoTitleInput"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ems="10"
-                android:inputType="text" />
+                android:inputType="text"
+                android:textColor="@color/white"/>
 
             <Button
                 android:id="@+id/btnAddLocalTodo"
