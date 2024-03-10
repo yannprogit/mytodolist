@@ -102,6 +102,8 @@ public class LocalTodoDetailActivity extends AppCompatActivity {
                     ((Activity) context).finish();
                     return true;
                 } else if (id == R.id.deleteLocalTodoOption) {
+                    LocalTodoDetailController.deleteTodoList(context, todolist);
+                    ((Activity) context).finish();
                     return true;
                 }
                 else {

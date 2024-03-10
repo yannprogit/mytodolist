@@ -51,4 +51,10 @@ public class LocalTodoDetailController {
         TodoList selectedTodo = localdb.getTodoList(todolist.getId());
         RemoteDB.saveTodoList(selectedTodo);
     }
+
+    public static void deleteTodoList(Context context, TodoList todolist) {
+        LocalDB localdb = new LocalDB(context);
+        localdb.deleteTodoList(todolist.getId());
+        RemoteDB.deleteTodoList(todolist.getId());
+    }
 }
