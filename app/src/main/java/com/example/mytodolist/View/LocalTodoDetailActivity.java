@@ -17,13 +17,15 @@ import com.example.mytodolist.R;
 import java.util.ArrayList;
 
 public class LocalTodoDetailActivity extends AppCompatActivity {
-
+    private TodoList importSelectedTodo;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_local_todo_detail);
 
-        TodoList importSelectedTodo = (TodoList) getIntent().getSerializableExtra("selectedTodo");
+        if (importSelectedTodo == null) {
+            importSelectedTodo = (TodoList) getIntent().getSerializableExtra("selectedTodo");
+        }
         TodoList selectedTodo = LocalTodoDetailController.getTodoList(this, importSelectedTodo);
 
         String title = selectedTodo.getTitle();
@@ -40,7 +42,9 @@ public class LocalTodoDetailActivity extends AppCompatActivity {
     protected void onResume() {
         super.onResume();
 
-        TodoList importSelectedTodo = (TodoList) getIntent().getSerializableExtra("selectedTodo");
+        if (importSelectedTodo == null) {
+            importSelectedTodo = (TodoList) getIntent().getSerializableExtra("selectedTodo");
+        }
         TodoList selectedTodo = LocalTodoDetailController.getTodoList(this, importSelectedTodo);
 
         String title = selectedTodo.getTitle();

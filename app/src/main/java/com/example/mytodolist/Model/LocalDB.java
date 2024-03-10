@@ -173,6 +173,20 @@ public class LocalDB extends SQLiteOpenHelper {
         db.close();
     }
 
+    public void updateTaskTitle(String taskId, String newTitle) {
+        SQLiteDatabase db = this.getWritableDatabase();
+
+        ContentValues values = new ContentValues();
+        values.put("title", newTitle);
+
+        String whereClause = "id=?";
+        String[] whereArgs = new String[]{taskId};
+
+        db.update(TABLE_TASK, values, whereClause, whereArgs);
+
+        db.close();
+    }
+
     public void insertLocalTodoLists(ArrayList<TodoList> todoLists) {
         Log.d("OnEstLa","ça insert local fort !");
         SQLiteDatabase db = this.getWritableDatabase();
@@ -249,6 +263,15 @@ public class LocalDB extends SQLiteOpenHelper {
         db.delete(TABLE_TASK, null, null);
         db.delete(TABLE_TODOLIST, null, null);
 
+        db.close();
+    }
+
+    public void deleteTask(String taskId) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        db.beginTransaction();
+        db.delete(TABLE_TASK, "id = ?", new String[]{taskId});
+        db.setTransactionSuccessful();
+        db.endTransaction();
         db.close();
     }
 

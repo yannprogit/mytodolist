@@ -11,7 +11,7 @@
         <TextView
             android:id="@+id/todoTitle"
             android:layout_width="241dp"
-            android:layout_height="31dp"
+            android:layout_height="57dp"
             android:layout_weight="1"
             android:text="TextView" />
 

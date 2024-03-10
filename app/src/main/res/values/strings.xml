@@ -15,4 +15,6 @@
     <string name="user_already_exists">User already exists</string>
     <string name="logout">Logout</string>
     <string name="titleLocalTodoActivity">My local todolists</string>
+    <string name="modify">Modify</string>
+    <string name="delete">Delete</string>
 </resources>
