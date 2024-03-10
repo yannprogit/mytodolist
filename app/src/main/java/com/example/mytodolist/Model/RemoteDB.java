@@ -85,6 +85,30 @@ public class RemoteDB {
         query.addValueEventListener(valueEventListener);
     }
 
+    public static void getUsers(ValueEventListener valueEventListener) {
+        DatabaseReference usersRef = db.getReference("users");
+        usersRef.addValueEventListener(valueEventListener);
+    }
+
+    public static void deleteTodoList(String todoListId) {
+        DatabaseReference todoListRef = FirebaseDatabase.getInstance().getReference("todolists").child(todoListId);
+
+        todoListRef.removeValue()
+                .addOnSuccessListener(new OnSuccessListener<Void>() {
+                    @Override
+                    public void onSuccess(Void aVoid) {
+                        Log.d("Firebase", "TodoList deleted");
+                    }
+                })
+                .addOnFailureListener(new OnFailureListener() {
+                    @Override
+                    public void onFailure(@NonNull Exception e) {
+                        Log.e("Firebase", "Error", e);
+                    }
+                });
+    }
+
+
     public static String generateId(String ref) {
         DatabaseReference refId = db.getReference(ref);
         return refId.push().getKey();

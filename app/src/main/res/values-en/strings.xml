@@ -21,4 +21,16 @@
     <string name="titleSharedTodo">Shared todolists</string>
     <string name="titleSharedTodoWithMe">Shared with me</string>
     <string name="user_doesnt_exist">This user doesn\'t exist</string>
+    <string name="todolist_shared">Todolist shared !</string>
+    <string name="mail_is_your">It is your mail !</string>
+    <string name="non_working">Non working</string>
+    <string name="quit_confirmation_message">Are you sure you want to quit ?</string>
+    <string name="yes_button">Yes</string>
+    <string name="no_button">No</string>
+    <string name="warning">Warning !</string>
+    <string name="mail">Mail</string>
+    <string name="password">Password</string>
+    <string name="pseudo">Pseudo</string>
+    <string name="create">Create</string>
+
 </resources>

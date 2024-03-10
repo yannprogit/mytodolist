@@ -2,6 +2,7 @@ package com.example.mytodolist.View;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
@@ -98,8 +99,11 @@ public class LocalTodoDetailActivity extends AppCompatActivity {
                 int id = item.getItemId();
                 if (id == R.id.shareLocalTodoOption) {
                     LocalTodoDetailController.goToShare(context, todolist);
+                    ((Activity) context).finish();
                     return true;
                 } else if (id == R.id.deleteLocalTodoOption) {
+                    LocalTodoDetailController.deleteTodoList(context, todolist);
+                    ((Activity) context).finish();
                     return true;
                 }
                 else {

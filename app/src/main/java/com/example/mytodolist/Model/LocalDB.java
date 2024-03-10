@@ -275,6 +275,17 @@ public class LocalDB extends SQLiteOpenHelper {
         db.close();
     }
 
+    public void deleteTodoList(String todoListId) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        db.beginTransaction();
+        db.delete(TABLE_TASK, "todolistId = ?", new String[]{todoListId});
+        db.delete(TABLE_TODOLIST, "id = ?", new String[]{todoListId});
+
+        db.setTransactionSuccessful();
+        db.endTransaction();
+        db.close();
+    }
+
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
         if (oldVersion != newVersion) { // Upgrade pas très fin
