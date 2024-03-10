@@ -23,4 +23,9 @@
     <string name="user_doesnt_exist">Cet utilisateur n\'existe pas</string>
     <string name="todolist_shared">Todolist partagé !</string>
     <string name="mail_is_your">Ceci est votre mail !</string>
+    <string name="non_working">Non fonctionnel</string>
+    <string name="quit_confirmation_message">Êtes-vous sûr de vouloir quitter ?</string>
+    <string name="yes_button">Oui</string>
+    <string name="no_button">Non</string>
+    <string name="warning">Attention !</string>
 </resources>
