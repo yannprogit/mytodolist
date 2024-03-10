@@ -17,4 +17,7 @@
     <string name="titleLocalTodoActivity">Mes todolists locales</string>
     <string name="modify">Modifier</string>
     <string name="delete">Supprimer</string>
+    <string name="share">Partager</string>
+    <string name="titleSharedTodo">Todolists partagés</string>
+    <string name="titleSharedTodoWithMe">Partagés avec moi</string>
 </resources>

@@ -44,4 +44,9 @@ public class MyLocalTodoController {
         Intent intent = new Intent(context, AddLocalTodoActivity.class);
         context.startActivity(intent);
     }
+
+    public static void goToSharedTodo(Context context) {
+        Intent intent = new Intent(context, AddLocalTodoActivity.class);
+        context.startActivity(intent);
+    }
 }

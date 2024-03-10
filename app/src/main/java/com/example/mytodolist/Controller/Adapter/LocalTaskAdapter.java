@@ -54,7 +54,6 @@ public class LocalTaskAdapter extends ArrayAdapter<Task> {
             }
         });
 
-        // Réinitialiser l'écouteur d'événements
         checkBox.setOnCheckedChangeListener(null);
 
         if (currentItem.getValidation() == 1) {

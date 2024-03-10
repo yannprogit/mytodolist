@@ -35,8 +35,30 @@
                     android:id="@+id/localTodoTitle"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:textColor="@color/backgroundColor"
+                    android:layout_centerVertical="true"
                     android:layout_weight="1"
                     android:text="TextView" />
+
+                <ImageButton
+                    android:id="@+id/btnGoToEditLocalTodo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:background="@android:color/transparent"
+                    android:layout_toRightOf="@+id/localTodoTitle"
+                    android:onClick="clickOnGoToUpdLocalTodo"
+                    android:src="@drawable/edit_pen" />
+
+                <ImageButton
+                    android:id="@+id/btnLocalTodoOptions"
+                    android:layout_width="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:background="@android:color/transparent"
+                    android:src="@drawable/black_option_points" />
 
             </RelativeLayout>
         </LinearLayout>

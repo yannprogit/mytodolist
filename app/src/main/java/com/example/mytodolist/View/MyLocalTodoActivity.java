@@ -40,12 +40,16 @@ public class MyLocalTodoActivity extends AppCompatActivity {
     }
 
     public void clickOnLogout(View view) {
-        finish();
         LoginController.logoutUser(this);
+        finish();
     }
 
     public void clickOnGoToAddLocalTodo(View view) {
         MyLocalTodoController.goToAddLocalTodo(this);
+    }
+
+    public void clickOnGoToSharedTodo(View view) {
+        MyLocalTodoController.goToSharedTodo(this);
     }
 
 }

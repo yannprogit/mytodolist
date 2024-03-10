@@ -4,8 +4,12 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
+import android.widget.ImageButton;
 import android.widget.ListView;
+import android.widget.PopupMenu;
 import android.widget.TextView;
 
 import com.example.mytodolist.Controller.Adapter.LocalTaskAdapter;
@@ -55,6 +59,14 @@ public class LocalTodoDetailActivity extends AppCompatActivity {
         ArrayList<Task> tasksList = selectedTodo.getTasks();
         LocalTaskAdapter adapter = new LocalTaskAdapter(this, tasksList);
         listView.setAdapter(adapter);
+
+        ImageButton todoOptionsBtn = findViewById(R.id.btnLocalTodoOptions);
+        todoOptionsBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                showPopupMenu(todoOptionsBtn);
+            }
+        });
     }
 
     public void clickOnGoToAddLocalTask(View view) {
@@ -62,10 +74,38 @@ public class LocalTodoDetailActivity extends AppCompatActivity {
         LocalTodoDetailController.goToAddLocalTask(this, importSelectedTodo);
     }
 
+    public void clickOnGoToUpdLocalTodo(View view) {
+        TodoList importSelectedTodo = (TodoList) getIntent().getSerializableExtra("selectedTodo");
+        LocalTodoDetailController.goToUpdLocalTask(this, importSelectedTodo);
+    }
+
     @Override
     protected void onStop() {
         super.onStop();
         TodoList importSelectedTodo = (TodoList) getIntent().getSerializableExtra("selectedTodo");
         LocalTodoDetailController.saveTodoList(this, importSelectedTodo);
+    }
+
+    private void showPopupMenu(View view) {
+        PopupMenu popupMenu = new PopupMenu(this, view);
+        MenuInflater inflater = popupMenu.getMenuInflater();
+        inflater.inflate(R.menu.local_todo_options, popupMenu.getMenu());
+
+        popupMenu.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
+            @Override
+            public boolean onMenuItemClick(MenuItem item) {
+                int id = item.getItemId();
+                if (id == R.id.shareLocalTodoOption) {
+                    return true;
+                } else if (id == R.id.deleteLocalTodoOption) {
+                    return true;
+                }
+                else {
+                    return false;
+                }
+            }
+        });
+
+        popupMenu.show();
     }
 }
